@@ -1,8 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
-function Greeting(){
-  return <h1>Hello, welcome to the learning platform!</h1>;
+function Greeting() {
+  return <h1>Hello, welcome to Edume corner!</h1>;
+}
+function Greting() {
+  return <h2>Welcome to the learning platform!</h2>;
 }
 
-ReactDOM.render(<Greeting />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(<Greeting />);
+const roots = createRoot(document.getElementById('roots'));
+roots.render(<Greting />);
