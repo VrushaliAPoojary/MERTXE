@@ -1,9 +1,9 @@
 import { createRoot } from 'react-dom/client';
-
+import './index.css';
 function Greeting() {
   return (
     <>
-    {/* <div><h1>Edume</h1></div>
+    <div><h1>Edume</h1></div>
     <div><p>Learn React Js</p></div>
     <div><button>Get Started</button></div>
     <div>
@@ -12,11 +12,11 @@ function Greeting() {
         <li>About</li>
         <li>Contact</li>
       </ul>
-    </div> */}
+    </div>
 
-    <StudyCourses />
-    <Coursenames />
-    
+    {/* <StudyCourses />
+    <Coursenames /> */}
+
 
     </>
   )}
