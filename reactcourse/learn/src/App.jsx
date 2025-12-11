@@ -1,10 +1,11 @@
-function App() {
-  return (
-    <div>
-      <h1>Hello, React!</h1>
-      <h2>Welcome to your first React application.</h2>
-    </div>
-  );
-}
+import React from "react";
+import './App.scss';
 
+function App(){
+  return (
+    <div className="App">
+      <h1>Welcome to the App Component</h1>
+    </div>
+  )
+}
 export default App;

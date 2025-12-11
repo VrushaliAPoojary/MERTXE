@@ -8,3 +8,4 @@ class ClassComp extends React.Component {
       </div>
     )
   }
+}
