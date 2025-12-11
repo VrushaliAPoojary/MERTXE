@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/Header.scss';
-import { Close } from '@mui/icons-material';
+import { Close, MenuBookOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -19,9 +19,24 @@ const Header = () => {
                     <li>
                         <Link to="/">Home</Link>
                     </li>
+                    <li>
+                        <Link to="/">About</Link>
+                    </li>
+                    <li>
+                        <Link to="/">Portfolio</Link>
+                    </li>
+                    <li>
+                        <Link to="/">Blog</Link>
+                    </li>
+                    <li>
+                        <Link to="/">Contact</Link>
+                    </li>
 
                 </ul>
             </nav>
+            <div className="changer">
+                <MenuBookOutlined className="menu" />
+            </div>
         </div>
     );
 };
