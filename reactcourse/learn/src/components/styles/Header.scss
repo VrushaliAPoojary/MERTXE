@@ -8,3 +8,38 @@
 .header__logo{
     margin-left: 4rem;
 }
+
+.navbar{
+    margin: 0 auto;
+}
+
+ul{
+    display: flex;
+    li{
+        list-style: none;
+        margin: 0 1rem;
+        a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+            & :hover{
+                color: rgb(166, 6, 110);
+            }
+
+        }
+    }
+}
+.changer{
+    display: flex  ;
+    margin-righht: 1.5rem;
+    .menu{
+        cursor: pointer;
+        margin-right: 1rem;
+        display: none;
+
+    }
+}
+.closed.close{
+    display: none;
+}
