@@ -16,7 +16,8 @@ const Header = () => {
                 <h1>Vrushali A Poojary</h1>
             </div>
 
-            <nav className="navbar">
+            <nav className={`navbar ${active ? 'active' : ''}`}>
+
                 <ul>
                     <div className="closed">
                         <Close className="close" onClick={showMenu}/>
