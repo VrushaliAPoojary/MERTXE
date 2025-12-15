@@ -41,7 +41,7 @@ const Header = () => {
             </nav>
 
             <div className="changer">
-                <MenuBookOutlined className="menu" />
+                <MenuBookOutlined className="menu" onClick = {showMenu} />
             </div>
         </div>
     );

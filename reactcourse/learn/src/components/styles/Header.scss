@@ -1,12 +1,13 @@
 .header {
     width: 100%;
-    display: flex;              /* FIX: invalid display:center */
+    display: flex;
     align-items: center;
-    justify-content: space-between; /* FIX: proper navbar alignment */
-    position: relative;         /* FIX: removes overlap */
+    justify-content: space-between;
+    position: relative;
     z-index: 1;
     color: rgb(218, 14, 92);
-    :hover{
+
+    &:hover {
         color: rgb(201, 15, 114);
     }
 }
@@ -33,7 +34,7 @@ ul {
             font-weight: bold;
             text-transform: uppercase;
 
-            &:hover {             /* FIX: space removed */
+            &:hover {
                 color: rgb(221, 22, 151);
             }
         }
@@ -42,7 +43,7 @@ ul {
 
 .changer {
     display: flex;
-    margin-right: 1.5rem;       /* FIX: typo margin-righht */
+    margin-right: 1.5rem;
 
     .menu {
         cursor: pointer;
@@ -51,6 +52,43 @@ ul {
     }
 }
 
-.closed .close {                /* FIX: selector correction */
+.closed .close {
     display: none;
+}
+
+@media (max-width: 800px) {
+    .header {
+        justify-content: space-between;
+    }
+
+    .navbar {
+        display: none;
+        transition: 1s ease;
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+        background: rgb(152, 14, 14);
+        transition: 1400ms ease;
+    }
+
+    ul {
+        margin: 0 auto;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 1rem;
+
+        li {
+            margin-block: 2rem;
+
+            a {
+                font-size: 20px;
+                color: rgb(151, 14, 73);
+                font-weight: bolder;
+            }
+        }
+    }
 }
