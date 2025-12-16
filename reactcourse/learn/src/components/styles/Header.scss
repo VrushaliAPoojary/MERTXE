@@ -88,14 +88,15 @@ body {
     transition: background-color 0.1s ease;
 }
 
-h1,
-a,
-li {
+.header h1,
+.header a,
+.header li {
     transition: color 0.2s ease;
 }
 
-h1:hover,
-a:hover,
-li:hover {
+.header h1:hover,
+.header a:hover,
+.header li:hover {
     color: rgb(93, 2, 36);
 }
+

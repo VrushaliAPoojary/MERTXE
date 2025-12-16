@@ -1,0 +1,70 @@
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.main_container {
+    width: 100%;
+    padding: 2rem 4rem;
+}
+
+.main_content {
+    max-width: 900px;
+}
+
+.text {
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin: 1rem 0;
+        color: #f9ddeb;
+    }
+    .color {
+         color: rgb(218, 14, 92);   /* your accent pink */
+            font-weight: 800;
+            transition: color 0.2s ease;
+    }
+    .color:hover {
+            color: #1e4dff; /* blue on hover (optional) */
+        }
+}
+
+/* ================= ICONS ================= */
+
+.icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+
+    .icon {
+        font-size: 2rem;
+        cursor: pointer;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .icon:hover {
+        color: rgb(218, 14, 92);
+        transform: translateY(-3px);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    .text h1 {
+        font-size: 2.2rem;
+    }
+
+    .main_container {
+        padding: 1.5rem;
+    }
+}
