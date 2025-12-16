@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/Header.scss';
 import { Close, MenuBookOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,29 @@ const Header = () => {
     const showMenu = () => {
         setActive(!active);
     }
+
+    useEffect(() => {
+    let timeout;
+
+    const handleMouseMove = () => {
+        document.body.style.backgroundColor = "#faa0b6ff";
+
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            document.body.style.backgroundColor = "black";
+        }, 200); // cursor stopped for 300ms
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        clearTimeout(timeout);
+    };
+}, []);
+
+
+
     return (
         <div className="header">
             <div className="header__logo">

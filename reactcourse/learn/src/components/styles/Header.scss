@@ -74,3 +74,19 @@ ul {
         letter-spacing: 0.05em;
     }
 }
+body {
+    background-color: black;
+    transition: background-color 0.1s ease;
+}
+
+h1,
+a,
+li {
+    transition: color 0.2s ease;
+}
+
+h1:hover,
+a:hover,
+li:hover {
+    color: rgb(93, 2, 36);
+}
