@@ -17,6 +17,15 @@
         font-weight: 800;      /* Bold */
     }
 }
+.header__logo h1 .initial {
+    transition: color 0.2s ease;
+}
+
+/* When hovering the full name */
+.header__logo h1:hover .initial {
+    color: #1e4dff; /* blue highlight */
+}
+
 
 .navbar {
     margin-right: 30rem;       /* Gap between logo & menu */

@@ -36,7 +36,12 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header__logo">
-                <h1>Vrushali A Poojary</h1>
+                <h1>
+    <span className="initial">V</span>rushali{" "}
+    <span className="initial">A</span>{" "}
+    <span className="initial">P</span>oojary
+</h1>
+
             </div>
 
             <nav className={`navbar ${active ? 'active' : ''}`}>
