@@ -3,8 +3,7 @@ import './styles/Main.scss';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
-
+import Vap from './assets/VAP.jpg';
 const Main = () => {
   return (
     <div className="main">           
@@ -22,8 +21,16 @@ const Main = () => {
                     <GitHubIcon className="icon"/>
 
                 </div>
+                <div className="buttons">
+                  <button>See me</button>
+                  <button>
+                    Hire Me
+                  </button>
+                </div>
             </div>
+
          </div>
+         <div className="main_img"><img src ={Vap} alt='VAP'/></div>
         </div>
     </div>
   );

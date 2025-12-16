@@ -5,21 +5,32 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
+    background: transparent;
 }
+
+/* ================= LAYOUT ================= */
 
 .main_container {
     width: 100%;
     padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
 }
 
 .main_content {
     max-width: 900px;
 }
 
+/* ================= TEXT ================= */
+
 .text {
     p {
         font-size: 1.2rem;
         margin-bottom: 1rem;
+        opacity: 0.9;
+        letter-spacing: 0.03em;
     }
 
     h1 {
@@ -27,15 +38,18 @@
         font-weight: 700;
         margin: 1rem 0;
         color: #f9ddeb;
+        line-height: 1.2;
     }
+
     .color {
-         color: rgb(218, 14, 92);   /* your accent pink */
-            font-weight: 800;
-            transition: color 0.2s ease;
+        color: rgb(218, 14, 92);
+        font-weight: 800;
+        transition: color 0.2s ease;
     }
+
     .color:hover {
-            color: #1e4dff; /* blue on hover (optional) */
-        }
+        color: #1e4dff;
+    }
 }
 
 /* ================= ICONS ================= */
@@ -43,28 +57,115 @@
 .icons {
     display: flex;
     gap: 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
 
     .icon {
-        font-size: 2rem;
+        font-size: 2.2rem;
         cursor: pointer;
-        transition: color 0.2s ease, transform 0.2s ease;
+        transition: color 0.25s ease, transform 0.25s ease;
     }
 
     .icon:hover {
         color: rgb(218, 14, 92);
-        transform: translateY(-3px);
+        transform: translateY(-4px) scale(1.05);
+    }
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+
+    button {
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        border: 2px solid rgb(218, 14, 92);
+        background: transparent;
+        color: rgb(218, 14, 92);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background: rgb(218, 14, 92);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(218, 14, 92, 0.3);
+    }
+}
+
+/* ================= IMAGE ================= */
+
+.main_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    img {
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid rgba(218, 14, 92, 0.6);
+        box-shadow:
+            0 0 40px rgba(218, 14, 92, 0.35),
+            0 0 80px rgba(218, 14, 92, 0.15);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+        box-shadow:
+            0 0 60px rgba(218, 14, 92, 0.6),
+            0 0 120px rgba(218, 14, 92, 0.25);
+    }
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+    .main_container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .icons {
+        justify-content: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .main_img img {
+        width: 280px;
+        height: 280px;
     }
 }
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
+    .main_container {
+        padding: 1.5rem;
+    }
+
     .text h1 {
         font-size: 2.2rem;
     }
 
-    .main_container {
-        padding: 1.5rem;
+    .text p {
+        font-size: 1.1rem;
+    }
+
+    .main_img img {
+        width: 220px;
+        height: 220px;
     }
 }
