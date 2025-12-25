@@ -1,6 +1,6 @@
 import React from "react";
 import './styles/Main.scss';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import { FaXTwitter } from "react-icons/fa6";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Vap from './assets/VAP.jpg';
@@ -16,9 +16,13 @@ const Main = () => {
                 <p>Front-End Developer</p>
 
                 <div className="icons">
-                    <TwitterIcon className="icon"/>
-                    <LinkedInIcon className="icon"/>
-                    <GitHubIcon className="icon"/>
+                  <a href="https://x.com/VrushaliAP04" target="_blank" rel="noopener noreferrer" aria-label="X">
+                    <FaXTwitter className="icon"/></a>
+
+                  <a href="http://linkedin.com/in/vrushali-a-poojary-73b9a129a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <LinkedInIcon className="icon"/></a>
+                  <a href="https://github.com/VrushaliAPoojary" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <GitHubIcon className="icon"/></a>
 
                 </div>
                 <div className="buttons">
