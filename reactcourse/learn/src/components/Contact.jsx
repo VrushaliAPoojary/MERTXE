@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 const Contact=() =>{
     return(
         <div className="contact">
-            <Link to ='/'>
+            <Link to ='/contact'>
              <ArrowBack className='arrow'/>
             </Link>
             <div className="inputs">

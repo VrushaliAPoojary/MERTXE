@@ -11,25 +11,25 @@ const Header = () => {
         setActive(!active);
     }
 
-    useEffect(() => {
-    let timeout;
+//     useEffect(() => {
+//     let timeout;
 
-    const handleMouseMove = () => {
-        document.body.style.backgroundColor = "#faa0b6ff";
+//     const handleMouseMove = () => {
+//         document.body.style.backgroundColor = "#faa0b6ff";
 
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            document.body.style.backgroundColor = "black";
-        }, 200); // cursor stopped for 300ms
-    };
+//         clearTimeout(timeout);
+//         timeout = setTimeout(() => {
+//             document.body.style.backgroundColor = "black";
+//         }, 200); // cursor stopped for 300ms
+//     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+//     window.addEventListener("mousemove", handleMouseMove);
 
-    return () => {
-        window.removeEventListener("mousemove", handleMouseMove);
-        clearTimeout(timeout);
-    };
-}, []);
+//     return () => {
+//         window.removeEventListener("mousemove", handleMouseMove);
+//         clearTimeout(timeout);
+//     };
+// }, []);
 
 
 
@@ -55,7 +55,7 @@ const Header = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/">About</Link>
+                        <Link to="/about">About</Link>
                     </li>
                     <li>
                         <Link to="/">Portfolio</Link>
@@ -64,7 +64,7 @@ const Header = () => {
                         <Link to="/">Blog</Link>
                     </li>
                     <li>
-                        <Link to="/">Contact</Link>
+                        <Link to="/contact">Contact</Link>
                     </li>
                 </ul>
             </nav>
