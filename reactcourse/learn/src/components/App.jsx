@@ -1,5 +1,5 @@
 import React from "react";
-import './styles/App.scss';
+import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Main from "./Main";
 import Section from "./Section";
@@ -8,10 +8,13 @@ import Contact from "./Contact";
 function App() {
   return (
     <div className="App">
-       {/* <Header /> */}
-      {/* <Main /> */}
-      <Section/>
-      {/* <Contact/> */}
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/about" element={<Section />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
