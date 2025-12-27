@@ -1,102 +1,100 @@
 .header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1;
-    color: rgb(218, 14, 92);
-    padding: 1.5rem 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  color: rgb(218, 14, 92);
+  padding: 1.5rem 3rem;
 }
 
 .header__logo {
-    margin-left: 4rem;
+  margin-left: 4rem;
 
-    h1 {
-        font-size: 2.4rem;     /* BIG logo like screenshot */
-        font-weight: 800;      /* Bold */
-    }
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+  }
 }
+
 .header__logo h1 .initial {
-    transition: color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
-/* When hovering the full name */
 .header__logo h1:hover .initial {
-    color: #1e4dff; /* blue highlight */
+  color: #1e4dff;
 }
-
 
 .navbar {
-    margin-right: 30rem;       /* Gap between logo & menu */
+  margin-right: 30rem;
 }
 
 ul {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    li {
-        list-style: none;
-        margin: 0 1.2rem;
+  li {
+    list-style: none;
+    margin: 0 1.2rem;
 
-        a {
-            text-decoration: none;
-            color: rgb(218, 14, 92);
-            font-weight: 700;
-            font-size: 1.8rem;
-        }
+    a {
+      text-decoration: none;
+      color: rgb(218, 14, 92);
+      font-weight: 700;
+      font-size: 1.8rem;
     }
+  }
 }
 
 .changer {
-    display: none;
+  display: none;
 }
 
 .closed {
-    display: none;
+  display: none;
 }
 
-/* ================= SMALL SCREENS ================= */
+/* SMALL SCREENS */
 
 @media (max-width: 1000px) {
-    .header {
-        justify-content: space-between;
-        align-items: center;
-        height: 100vh;
-        font-size: 2rem;
-    }
+  .header {
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+  }
 
-    .navbar {
-        display: flex;
-    }
+  .navbar {
+    display: flex;
+  }
 
-    ul {
-        flex-direction: column;   /* Vertical menu */
-        align-items: flex-start;  /* Like screenshot */
-        gap: 2.5rem;
-        margin-left: 6rem;
-        
-    }
+  ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin-left: 6rem;
+  }
 
-    ul li a {
-        font-size: 2rem;
-        letter-spacing: 0.05em;
-    }
+  ul li a {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+  }
 }
+
 body {
-    background-color: black;
-    transition: background-color 0.1s ease;
+  background-color: black;
+  transition: background-color 0.1s ease;
 }
 
 .header h1,
 .header a,
 .header li {
-    transition: color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .header h1:hover,
 .header a:hover,
 .header li:hover {
-    color: rgb(93, 2, 36);
+  color: rgb(93, 2, 36);
 }
-

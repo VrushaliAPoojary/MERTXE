@@ -1,24 +1,27 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Header from "./Header";
+import Layout from "./Layout";
 import Main from "./Main";
 import Section from "./Section";
 import Contact from "./Contact";
+import "./styles/App.scss";
 
 function App() {
   const location = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0,0);
-  },[location.pathname]);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="App">
-      <Header />
-
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/about" element={<Section />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/about" element={<Section />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Layout>
     </div>
   );
 }
