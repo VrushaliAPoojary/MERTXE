@@ -1,14 +1,17 @@
 import React from "react";
 import { ArrowBack } from "@mui/icons-material";
 import "./styles/Contact.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { FaXTwitter } from "react-icons/fa6";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const Contact = () => {
   const navigate = useNavigate();
 
   return (
     <div className="contact">
-      {/* Either go back in history, or link to home */}
+      {/* back button */}
       <button
         type="button"
         className="arrow"
@@ -18,17 +21,42 @@ const Contact = () => {
         <ArrowBack />
       </button>
 
-      {/* If you strictly want a Link instead, use:
-      <Link to="/" aria-label="Back to Home">
-        <ArrowBack className="arrow" />
-      </Link>
-      */}
       <div className="inputs">
         <h1>Contact Me</h1>
         <input type="text" placeholder="Name" />
         <input type="email" placeholder="Email" />
         <input type="text" placeholder="message" className="message" />
         <button>Push</button>
+
+        {/* social icons inside card */}
+        <div className="contact-icons">
+          <a
+            href="https://x.com/VrushaliAP04"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X"
+          >
+            <FaXTwitter className="icon" />
+          </a>
+
+          <a
+            href="http://linkedin.com/in/vrushali-a-poojary-73b9a129a"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <LinkedInIcon className="icon" />
+          </a>
+
+          <a
+            href="https://github.com/VrushaliAPoojary"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <GitHubIcon className="icon" />
+          </a>
+        </div>
       </div>
     </div>
   );

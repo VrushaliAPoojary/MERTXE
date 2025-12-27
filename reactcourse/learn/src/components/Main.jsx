@@ -4,13 +4,28 @@ import { FaXTwitter } from "react-icons/fa6";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Vap from "./assets/VAP.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Main = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleResumeClick = () => {
     navigate("/resumes");
+  };
+
+  const handleHireMeClick = () => {
+    // if not on home route, go there first then scroll
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById("contact");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    } else {
+      const el = document.getElementById("contact");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -54,7 +69,7 @@ const Main = () => {
 
             <div className="buttons">
               <button onClick={handleResumeClick}>My Resume</button>
-              <button>Hire Me</button>
+              <button onClick={handleHireMeClick}>Hire Me</button>
             </div>
           </div>
         </div>
