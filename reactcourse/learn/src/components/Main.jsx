@@ -4,8 +4,15 @@ import { FaXTwitter } from "react-icons/fa6";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Vap from "./assets/VAP.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
+  const navigate = useNavigate();
+
+  const handleResumeClick = () => {
+    navigate("/resumes");
+  };
+
   return (
     <div className="main">
       <div className="main_container">
@@ -46,7 +53,7 @@ const Main = () => {
             </div>
 
             <div className="buttons">
-              <button>See me</button>
+              <button onClick={handleResumeClick}>My Resume</button>
               <button>Hire Me</button>
             </div>
           </div>

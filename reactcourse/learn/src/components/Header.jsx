@@ -1,16 +1,35 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Header.scss";
 import { Close, MenuBookOutlined } from "@mui/icons-material";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = ({ activeSection, setActiveSection }) => {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const showMenu = () => {
     setActive(!active);
   };
 
   const scrollToSection = (sectionId) => {
+    // If not on the main page, go to "/" first, then scroll
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+        setActive(false);
+        setActiveSection(sectionId);
+      }, 0);
+      return;
+    }
+
+    // Normal behavior when already on "/"
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -26,8 +45,6 @@ const Header = ({ activeSection, setActiveSection }) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // removed second useEffect that was updating activeSection on scroll
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
