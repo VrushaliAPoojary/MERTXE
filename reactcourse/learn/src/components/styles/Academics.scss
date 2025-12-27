@@ -1,10 +1,8 @@
-// Copy your existing Section.scss styles - same layout
 .sections {
   width: 100%;
   min-height: 100vh;
-  padding: 4rem 2rem;
+  padding: 3rem 1.5rem;
   display: flex;
-  align-items: center;
   justify-content: center;
   background: linear-gradient(
     135deg,
@@ -16,125 +14,121 @@
 }
 
 .sections_container {
-  max-width: 1200px;
+  max-width: 900px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: center;
 }
 
-.section_img {
+/* STRICT VERTICAL LIST */
+.academics_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* LIST ROW (NOT CARD GRID) */
+.academic_card {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow:
-      0 20px 40px rgba(0, 0, 0, 0.5),
-      0 0 0 6px rgba(218, 14, 92, 0.15);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-
-  img:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow:
-      0 30px 60px rgba(0, 0, 0, 0.6),
-      0 0 0 8px rgba(218, 14, 92, 0.25);
-  }
+  gap: 1.2rem;
+  padding: 0.9rem 1.4rem;
+  background: rgba(15, 15, 26, 0.55);
+  border-radius: 10px;
+  border: 1px solid rgba(218, 14, 92, 0.18);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
 }
 
-.section_content {
-  h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    color: #f9ddeb;
-    position: relative;
-  }
-
-  h1::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 60px;
-    height: 4px;
-    background: rgb(218, 14, 92);
-    border-radius: 4px;
-  }
-
-  p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 0.9rem;
-    color: #d1d5db;
-  }
-
-  p:first-of-type {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #e5e7eb;
-  }
-
-  p:not(:first-of-type) {
-    display: inline-block;
-    margin-right: 0.6rem;
-    margin-bottom: 0.6rem;
-    padding: 0.45rem 0.9rem;
-    background: rgba(218, 14, 92, 0.12);
-    border: 1px solid rgba(218, 14, 92, 0.35);
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #f9ddeb;
-    transition: all 0.3s ease;
-  }
-
-  p:not(:first-of-type):hover {
-    background: rgb(218, 14, 92);
-    color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(218, 14, 92, 0.4);
-  }
+.academic_card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55);
 }
 
-/* TABLET */
-@media (max-width: 992px) {
-  .sections_container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+/* LEFT */
+.card_header {
+  min-width: 72px;
+  text-align: center;
+}
 
-  .section_content h1::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.card_header img {
+  width: 48px;
+  margin-bottom: 0.2rem;
+}
 
-  .section_img img {
-    max-width: 300px;
-  }
+.card_header h2 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #f9ddeb;
+}
+
+/* RIGHT */
+.card_body {
+  flex: 1;
+  text-align: left;
+}
+
+.institution {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+}
+
+.location {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 0.2rem;
+  text-decoration: none;
+}
+
+.location:hover {
+  color: #f9ddeb;
+  text-decoration: underline;
+}
+
+.website {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: rgb(218, 14, 92);
+  font-weight: 600;
+  margin-right: 0.5rem;
+  text-decoration: none;
+}
+
+.website:hover {
+  text-decoration: underline;
+}
+
+.tags {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+}
+
+.tags span {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.55rem;
+  background: rgba(218, 14, 92, 0.12);
+  border: 1px solid rgba(218, 14, 92, 0.3);
+  border-radius: 999px;
+  color: #f9ddeb;
+}
+
+.score {
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  color: #e5e7eb;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .sections {
-    padding: 3rem 1.2rem;
+  .academic_card {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .section_content h1 {
-    font-size: 2.2rem;
-  }
-
-  .section_content p {
-    font-size: 1rem;
-  }
-
-  .section_img img {
-    max-width: 260px;
+  .card_header {
+    text-align: left;
   }
 }
