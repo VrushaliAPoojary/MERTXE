@@ -97,9 +97,9 @@ ul {
       transition: color 0.25s ease, background 0.25s ease;
     }
 
+    /* only hover effect, no active state box */
     a:hover,
-    button:hover,
-    button.active {
+    button:hover {
       background: rgba(218, 14, 92, 0.12);
       color: rgb(218, 14, 92);
     }

@@ -27,25 +27,7 @@ const Header = ({ activeSection, setActiveSection }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "about", "academics", "projects", "interests", "contact"];
-      const scrollPosition = window.scrollY + 100;
-      
-      sections.forEach((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
-            setActiveSection(section);
-          }
-        }
-      });
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // removed second useEffect that was updating activeSection on scroll
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
@@ -63,32 +45,32 @@ const Header = ({ activeSection, setActiveSection }) => {
             <Close className="close" onClick={showMenu} />
           </div>
           <li>
-            <button onClick={() => scrollToSection("home")} className={activeSection === "home" ? "active" : ""}>
+            <button onClick={() => scrollToSection("home")}>
               Home
             </button>
           </li>
           <li>
-            <button onClick={() => scrollToSection("about")} className={activeSection === "about" ? "active" : ""}>
+            <button onClick={() => scrollToSection("about")}>
               About
             </button>
           </li>
           <li>
-            <button onClick={() => scrollToSection("academics")} className={activeSection === "academics" ? "active" : ""}>
+            <button onClick={() => scrollToSection("academics")}>
               Academics
             </button>
           </li>
           <li>
-            <button onClick={() => scrollToSection("projects")} className={activeSection === "projects" ? "active" : ""}>
+            <button onClick={() => scrollToSection("projects")}>
               Projects
             </button>
           </li>
           <li>
-            <button onClick={() => scrollToSection("interests")} className={activeSection === "interests" ? "active" : ""}>
+            <button onClick={() => scrollToSection("interests")}>
               Interest
             </button>
           </li>
           <li>
-            <button onClick={() => scrollToSection("contact")} className={activeSection === "contact" ? "active" : ""}>
+            <button onClick={() => scrollToSection("contact")}>
               Contact
             </button>
           </li>
