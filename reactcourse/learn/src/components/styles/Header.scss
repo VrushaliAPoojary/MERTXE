@@ -1,99 +1,143 @@
+/* ================= HEADER BASE ================= */
+
 .header {
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  color: rgb(218, 14, 92);
-  padding: 1.5rem 3rem;
-  padding: 1rem 3rem;  
+  justify-content: space-between;
+
+  margin-right: 12rem;
+
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(18px);
+
+  /* thinner ribbon */
+  padding: 0.8rem 6rem;
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-// .header-inner {
-//   width: 100%;
-//   max-width: 1200px;         /* same idea as main section */
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// }
+
+/* ================= SCROLL EFFECT ================= */
+
+.header.scrolled {
+  background: rgba(15, 15, 26, 0.97);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* ================= LOGO ================= */
 
 .header__logo {
-  margin-left: 12rem;
-  margin-right: 4rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
 
   h1 {
-    font-size: 2.6rem;
-    font-weight: 800;
+    font-size: 2.6rem;        /* slightly larger */
+    font-weight: 900;        /* EXTRA BOLD */
+    letter-spacing: 0.05em;  /* strong branding feel */
+    color: rgb(218, 14, 92);
+    white-space: nowrap;
   }
 }
 
+/* highlight A separately */
 .header__logo h1 .initial {
-  transition: color 0.2s ease;
+  margin-left: 0.35rem;
+  font-weight: 900;
+  transition: color 0.25s ease;
 }
 
 .header__logo h1:hover .initial {
   color: #1e4dff;
 }
 
-.navbar {
-  margin-left: 2rem;   /* add or increase this */
-}
+/* ================= NAVBAR ================= */
 
 .navbar {
-  margin-right: 26rem;
+  display: flex;
+  align-items: center;
+  margin-left: 6rem;
 }
 
 ul {
   display: flex;
   align-items: center;
+  gap: 2.8rem;
+  padding: 0;
+  margin: 0;
 
   li {
     list-style: none;
-    margin: 0 1.2rem;
 
-    a {
+    a,
+    button {
+      background: none;
+      border: none;
       text-decoration: none;
+
       color: rgb(218, 14, 92);
       font-weight: 700;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+
+      cursor: pointer;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+
+      transition: color 0.25s ease, background 0.25s ease;
+    }
+
+    a:hover,
+    button:hover,
+    button.active {
+      background: rgba(218, 14, 92, 0.12);
+      color: rgb(218, 14, 92);
     }
   }
 }
 
-.changer {
-  display: none;
-}
+/* ================= UTILITIES ================= */
 
+.changer,
 .closed {
   display: none;
 }
 
-/* SMALL SCREENS */
+/* ================= SMALL SCREENS ================= */
 
 @media (max-width: 1000px) {
   .header {
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem 3rem;
     height: 100vh;
-    font-size: 2rem;
   }
 
   .navbar {
-    display: flex;
+    width: 100%;
+    margin-top: 3rem;
   }
 
   ul {
     flex-direction: column;
     align-items: flex-start;
     gap: 2.5rem;
-    margin-left: 6rem;
+    margin-left: 2rem;
   }
 
-  ul li a {
+  ul li a,
+  ul li button {
     font-size: 2rem;
     letter-spacing: 0.05em;
   }
 }
+
+/* ================= GLOBAL TRANSITIONS ================= */
 
 body {
   background-color: black;
