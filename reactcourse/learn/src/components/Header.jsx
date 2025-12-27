@@ -38,12 +38,12 @@ const Header = () => {
           </li>
           <li>
             <Link to="/" onClick={() => setActive(false)}>
-              Portfolio
+              Projects
             </Link>
           </li>
           <li>
             <Link to="/" onClick={() => setActive(false)}>
-              Blog
+              Interest
             </Link>
           </li>
           <li>
