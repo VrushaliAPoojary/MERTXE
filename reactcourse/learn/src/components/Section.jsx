@@ -1,35 +1,84 @@
 import React from "react";
 import "./styles/Section.scss";
 import me from "./assets/me.jpg";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Section = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleViewWork = () => {
+    // if not on home route, go there first then scroll
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById("projects");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 0);
+      return;
+    }
+    const element = document.getElementById("projects");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    } 
+  };
+
   return (
-    <div className="sections">
-      <div className="sections_container">
-        <div className="section_img">
-          <img src={me} alt="me" />
+    <section className="about" id="about">
+      <div className="about__container">
+        <div className="about__image-wrapper">
+          <div className="about__image-glow" />
+          <img src={me} alt="Vrushali Poojary" className="about__image" />
         </div>
-        <div className="section_content">
-          <h1>About Me</h1>
-          <p>
+
+        <div className="about__content">
+          <h1 className="about__title">About Me</h1>
+          <p className="about__intro">
             Hello! I'm Vrushali A Poojary, a passionate Front-End Developer
             dedicated to crafting engaging and user-friendly web experiences.
-            With a keen eye for design and a strong foundation in HTML, CSS, and
-            JavaScript, I specialize in bringing creative visions to life on the
-            web. My journey in web development is fueled by a love for
-            problem-solving and a commitment to continuous learning. I thrive in
-            collaborative environments where I can contribute my skills and grow
-            alongside talented professionals. Let's connect and create something
-            amazing together!
+            With a strong foundation in HTML, CSS, and JavaScript, I love
+            transforming ideas into clean, responsive, and interactive UIs.
           </p>
-          <p>JavaScript Developer</p>
-          <p>MERN</p>
-          <p>Python</p>
-          <p>Computer Vision</p>
-          <p>Artificial Intelligence And Mchine Learning</p>
+          <p className="about__intro about__intro--secondary">
+            My journey in web development is driven by problem-solving and
+            continuous learning. I thrive in collaborative environments where
+            I can grow alongside talented professionals and build meaningful
+            digital products.
+          </p>
+
+          {/* Languages */}
+          <div className="about__section">
+            <h3 className="about__subtitle">Languages I Speak</h3>
+            <div className="about__tags">
+              <span className="about__tag">English</span>
+              <span className="about__tag">Hindi</span>
+              <span className="about__tag">Kannada</span>
+              <span className="about__tag">Sanskrit</span>
+              <span className="about__tag">Tulu</span>
+            </div>
+          </div>
+
+          {/* Skills */}
+          <div className="about__section">
+            <h3 className="about__subtitle">Skills</h3>
+            <ul className="about__list">
+              <li className="about__list-item">JavaScript Developer</li>
+              <li className="about__list-item">MERN Stack</li>
+              <li className="about__list-item">Python</li>
+              <li className="about__list-item">Computer Vision</li>
+              <li className="about__list-item">
+                Artificial Intelligence & Machine Learning
+              </li>
+            </ul>
+          </div>
+
+          <button className="about__button" onClick={handleViewWork}>
+            View My Work
+          </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
