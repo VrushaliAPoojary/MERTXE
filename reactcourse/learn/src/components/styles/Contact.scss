@@ -17,7 +17,10 @@
 
   position: relative;
   color: #e0d0d8;
-  padding: 6rem 1.5rem;
+
+  /* Increased top padding to prevent header overlap */
+  padding: 6.5rem 1.5rem 4rem;
+  box-sizing: border-box;
 }
 
 /* ================= BACK ARROW ================= */
@@ -38,6 +41,8 @@
   align-items: center;
   justify-content: center;
 
+  z-index: 10; /* ensures arrow stays above card */
+
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
@@ -57,9 +62,9 @@ a {
 
 .inputs {
   width: 100%;
-  max-width: 420px;
-  padding: 2.4rem 2.2rem;
-  margin-top: 2rem;
+  max-width: 400px; /* slightly reduced to fit viewport better */
+  padding: 2.3rem 2.1rem;
+  margin: auto;
 
   background: rgba(18, 18, 30, 0.92);
   backdrop-filter: blur(14px);
@@ -74,15 +79,18 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  /* Keeps card inside viewport on small screens */
+  max-height: calc(100vh - 9rem);
 }
 
 /* ================= HEADING ================= */
 
 .inputs h1 {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-weight: 800;
 
-  margin-bottom: 2.1rem;
+  margin-bottom: 2rem;
   color: #f9ddeb;
 
   text-align: center;
@@ -107,7 +115,7 @@ a {
 input {
   width: 100%;
   padding: 14px 16px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.05rem;
 
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -131,14 +139,14 @@ input:focus {
 
 /* MESSAGE INPUT SPACING */
 .message {
-  padding-bottom: 6.2rem;
+  padding-bottom: 6rem;
 }
 
 /* ================= SUBMIT BUTTON ================= */
 
 button {
   margin-top: 1.4rem;
-  padding: 11px 48px;
+  padding: 11px 46px;
 
   background: transparent;
   border: 2px solid rgb(218, 14, 92);
@@ -171,13 +179,13 @@ button:hover {
 
 .contact-icons {
   display: flex;
-  gap: 2.2rem;
-  margin-top: 2.4rem;
+  gap: 2.1rem;
+  margin-top: 2.3rem;
   justify-content: center;
 }
 
 .contact-icons .icon {
-  font-size: 2.3rem;
+  font-size: 2.25rem;
   cursor: pointer;
 
   transition: color 0.25s ease, transform 0.25s ease;
@@ -192,16 +200,17 @@ button:hover {
 
 @media (max-width: 550px) {
   .contact {
-    padding: 4.5rem 1rem; /* prevents vertical crowding */
+    padding: 5.2rem 1rem 3.5rem;
   }
 
   .inputs {
     max-width: 92%;
-    padding: 2.1rem 1.6rem;
+    padding: 2rem 1.6rem;
+    max-height: unset;
   }
 
   .inputs h1 {
-    font-size: 2rem;
+    font-size: 1.95rem;
   }
 
   .contact-icons {
@@ -209,7 +218,7 @@ button:hover {
   }
 
   .contact-icons .icon {
-    font-size: 2.1rem;
+    font-size: 2.05rem;
   }
 }
 
@@ -217,7 +226,7 @@ button:hover {
 
 @media (max-height: 700px) {
   .contact {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 }
