@@ -50,7 +50,7 @@ const handleWhatsApp = () => {
 };
 
  const handleEmail = () => {
-  const subject = encodeURIComponent("New Contact Message");
+  const subject = encodeURIComponent("Contacting from Portfolio Website");
   const body = encodeURIComponent(formattedMessage);
 
   const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=vrushaliash04@gmail.com&su=${subject}&body=${body}`;
