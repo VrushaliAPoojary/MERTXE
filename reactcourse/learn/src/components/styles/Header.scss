@@ -1,5 +1,4 @@
 /* ================= HEADER BASE ================= */
-
 .header {
   width: 100%;
   position: fixed;
@@ -14,24 +13,25 @@
   margin-right: 12rem;
 
   z-index: 1000;
-  background: linear-gradient(
-    135deg,
-    #0f0f1a 0%,
-    #111827 50%,
-    #0b0b14 100%
-  );
-  backdrop-filter: blur(18px);
 
-  /* thinner ribbon */
+  /* glassmorphism background */
+  background: rgba(15, 15, 26, 0.25);           /* transparent dark */
+  backdrop-filter: blur(16px);                  /* glass blur */
+  -webkit-backdrop-filter: blur(16px);          /* Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* subtle edge */
+
   padding: 0.8rem 6rem;
 
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 /* ================= SCROLL EFFECT ================= */
 
 .header.scrolled {
-  background: rgba(15, 15, 26, 0.97);
+  background: rgba(15, 15, 26, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
 }
 
