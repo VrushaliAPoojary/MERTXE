@@ -108,6 +108,7 @@
   .sections_container {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 3rem; /* prevents vertical crowding */
   }
 
   .section_content h1::after {
@@ -126,6 +127,10 @@
     padding: 3rem 1.2rem;
   }
 
+  .sections_container {
+    gap: 2.5rem;
+  }
+
   .section_content h1 {
     font-size: 2.2rem;
   }
@@ -134,7 +139,19 @@
     font-size: 1rem;
   }
 
+  .section_content p:not(:first-of-type) {
+    font-size: 0.85rem; /* prevents tag overflow */
+  }
+
   .section_img img {
     max-width: 260px;
+  }
+}
+
+/* SMALL HEIGHT DEVICES */
+@media (max-height: 700px) {
+  .sections {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }

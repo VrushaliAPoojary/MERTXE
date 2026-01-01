@@ -138,9 +138,16 @@
 
 /* ================= RESPONSIVE ================= */
 
+/* TABLET */
 @media (max-width: 768px) {
   .resumes {
     padding-top: 6rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .resumes_container {
+    padding: 2rem;
   }
 
   .resumes_container h2 {
@@ -149,5 +156,41 @@
 
   .resumes_container p {
     font-size: 1rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .resumes {
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .resumes_container {
+    padding: 1.6rem;
+  }
+
+  .resume_cards {
+    gap: 1.6rem;
+  }
+
+  .resume_card {
+    padding: 1.6rem;
+  }
+
+  .resume_card h3 {
+    font-size: 1.25rem;
+  }
+
+  .resume_link {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+/* SHORT HEIGHT DEVICES */
+@media (max-height: 700px) {
+  .resumes {
+    padding-top: 5rem;
   }
 }

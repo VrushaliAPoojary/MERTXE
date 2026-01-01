@@ -9,3 +9,16 @@
   scroll-snap-align: start;
   min-height: 100vh;
 }
+
+/* -------- RESPONSIVE SAFETY ONLY -------- */
+
+/* Mobile viewport fix (prevents browser UI jump) */
+@media (max-width: 768px) {
+  .content-wrapper {
+    height: 100dvh;
+  }
+
+  .page-section {
+    min-height: 100dvh;
+  }
+}

@@ -13,8 +13,6 @@
     #111827 50%,
     #0b0b14 100%
   );
-//   margin-top: 0rem;
-//   margin-bottom: 10rem;
 }
 
 .main_container {
@@ -153,8 +151,13 @@
 /* MOBILE */
 
 @media (max-width: 768px) {
+  .main {
+    height: 100dvh; /* mobile viewport safety */
+  }
+
   .main_container {
     padding: 1.5rem;
+    gap: 2.5rem; /* prevents vertical overflow */
   }
 
   .text h1 {
@@ -168,5 +171,17 @@
   .main_img img {
     width: 220px;
     height: 220px;
+  }
+}
+
+/* SMALL HEIGHT DEVICES */
+
+@media (max-height: 700px) {
+  .main_container {
+    gap: 2rem;
+  }
+
+  .text p {
+    font-size: 1.6rem;
   }
 }

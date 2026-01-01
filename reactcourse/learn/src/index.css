@@ -27,3 +27,37 @@ body {
   scroll-snap-align: start;
   min-height: 100vh;
 }
+
+/* ---------------- RESPONSIVE SAFETY ---------------- */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+
+  .content-wrapper {
+    height: 100dvh; /* better mobile viewport handling */
+  }
+
+  .page-section {
+    min-height: 100dvh;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  html,
+  body {
+    font-size: 13px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}

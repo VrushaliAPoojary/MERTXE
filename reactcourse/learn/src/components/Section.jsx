@@ -6,22 +6,19 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Section = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
   const handleViewWork = () => {
-    // if not on home route, go there first then scroll
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
         const element = document.getElementById("projects");
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        if (element) element.scrollIntoView({ behavior: "smooth" });
       }, 0);
       return;
     }
+
     const element = document.getElementById("projects");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    } 
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -34,12 +31,14 @@ const Section = () => {
 
         <div className="about__content">
           <h1 className="about__title">About Me</h1>
+
           <p className="about__intro">
             Hello! I'm Vrushali A Poojary, a passionate Front-End Developer
             dedicated to crafting engaging and user-friendly web experiences.
             With a strong foundation in HTML, CSS, and JavaScript, I love
             transforming ideas into clean, responsive, and interactive UIs.
           </p>
+
           <p className="about__intro about__intro--secondary">
             My journey in web development is driven by problem-solving and
             continuous learning. I thrive in collaborative environments where
@@ -47,7 +46,6 @@ const Section = () => {
             digital products.
           </p>
 
-          {/* Languages */}
           <div className="about__section">
             <h3 className="about__subtitle">Languages I Speak</h3>
             <div className="about__tags">
@@ -59,7 +57,6 @@ const Section = () => {
             </div>
           </div>
 
-          {/* Skills */}
           <div className="about__section">
             <h3 className="about__subtitle">Skills</h3>
             <ul className="about__list">
