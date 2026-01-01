@@ -25,31 +25,31 @@
 
 /* ================= BACK ARROW ================= */
 
-.arrow {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
+// .arrow {
+//   position: absolute;
+//   top: 2rem;
+//   left: 2rem;
 
-  font-size: 2.1rem;
-  color: #f9ddeb;
+//   font-size: 2.1rem;
+//   color: #f9ddeb;
 
-  cursor: pointer;
-  background: transparent;
-  border: none;
+//   cursor: pointer;
+//   background: transparent;
+//   border: none;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-  z-index: 10; /* ensures arrow stays above card */
+//   z-index: 10; /* ensures arrow stays above card */
 
-  transition: color 0.25s ease, transform 0.25s ease;
-}
+//   transition: color 0.25s ease, transform 0.25s ease;
+// }
 
-.arrow:hover {
-  color: rgb(218, 14, 92);
-  transform: translateX(-4px);
-}
+// .arrow:hover {
+//   color: rgb(218, 14, 92);
+//   transform: translateX(-4px);
+// }
 
 /* ================= LINKS ================= */
 

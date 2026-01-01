@@ -83,7 +83,7 @@ const Header = ({ activeSection, setActiveSection }) => {
           </li>
           <li>
             <button onClick={() => scrollToSection("interests")}>
-              Interest
+              Interests
             </button>
           </li>
           <li>

@@ -12,14 +12,14 @@ const Contact = () => {
   return (
     <div className="contact">
       {/* back button */}
-      <button
+      {/* <button
         type="button"
         className="arrow"
         onClick={() => navigate(-1)}
         aria-label="Go back"
       >
         <ArrowBack />
-      </button>
+      </button> */}
 
       <div className="inputs">
         <h1>Contact Me</h1>

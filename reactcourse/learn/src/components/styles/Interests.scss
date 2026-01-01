@@ -1,157 +1,91 @@
-// Same as Academics - copy Section.scss styles exactly
-.sections {
+.interests {
   width: 100%;
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(
-    135deg,
-    #0f0f1a 0%,
-    #111827 50%,
-    #0b0b14 100%
-  );
+  padding: 100px 0;
+  background: linear-gradient(135deg, #0e0e19, #111827, #0a0a14);
   color: #e5e7eb;
 }
 
-.sections_container {
+.interests_container {
   max-width: 1200px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: center;
+  margin: auto;
+  padding: 0 20px;
 }
 
-.section_img {
+.interests_title {
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.interests_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+.interest_card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 35px 25px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.interest_card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(120deg, #6366f1, #22d3ee);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.interest_card:hover::before {
+  opacity: 1;
+}
+
+.interest_card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.interest_icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow:
-      0 20px 40px rgba(0, 0, 0, 0.5),
-      0 0 0 6px rgba(218, 14, 92, 0.15);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-
-  img:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow:
-      0 30px 60px rgba(0, 0, 0, 0.6),
-      0 0 0 8px rgba(218, 14, 92, 0.25);
-  }
 }
 
-.section_content {
-  h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    color: #f9ddeb;
-    position: relative;
-  }
-
-  h1::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 60px;
-    height: 4px;
-    background: rgb(218, 14, 92);
-    border-radius: 4px;
-  }
-
-  p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 0.9rem;
-    color: #d1d5db;
-  }
-
-  p:first-of-type {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #e5e7eb;
-  }
-
-  p:not(:first-of-type) {
-    display: inline-block;
-    margin-right: 0.6rem;
-    margin-bottom: 0.6rem;
-    padding: 0.45rem 0.9rem;
-    background: rgba(218, 14, 92, 0.12);
-    border: 1px solid rgba(218, 14, 92, 0.35);
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #f9ddeb;
-    transition: all 0.3s ease;
-  }
-
-  p:not(:first-of-type):hover {
-    background: rgb(218, 14, 92);
-    color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(218, 14, 92, 0.4);
-  }
+.interest_icon img {
+  width: 100%;
+  height: auto;
 }
 
-/* TABLET */
-@media (max-width: 992px) {
-  .sections_container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 3rem; /* prevents vertical crowding */
-  }
-
-  .section_content h1::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .section_img img {
-    max-width: 300px;
-  }
+.interest_card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
-/* MOBILE */
+.interest_card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #cbd5f5;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-  .sections {
-    padding: 3rem 1.2rem;
-  }
-
-  .sections_container {
-    gap: 2.5rem;
-  }
-
-  .section_content h1 {
-    font-size: 2.2rem;
-  }
-
-  .section_content p {
-    font-size: 1rem;
-  }
-
-  .section_content p:not(:first-of-type) {
-    font-size: 0.85rem; /* prevents tag overflow */
-  }
-
-  .section_img img {
-    max-width: 260px;
-  }
-}
-
-/* SMALL HEIGHT DEVICES */
-@media (max-height: 700px) {
-  .sections {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  .interests_title {
+    font-size: 2.1rem;
   }
 }
