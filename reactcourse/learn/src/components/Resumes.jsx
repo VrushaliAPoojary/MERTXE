@@ -3,6 +3,7 @@ import "./styles/Resumes.scss";
 import ResumeGeneral from "./assets/ResumeGeneral.pdf";
 import ResumeFrontend from "./assets/ResumeFrontend.pdf";
 import Coverletter from "./assets/Coverletter.pdf";
+import CybersecurityResume from "./assets/VrushaliCyber.pdf";
 
 const Resumes = () => {
   const resumeList = [
@@ -20,6 +21,11 @@ const Resumes = () => {
       name: "Cover Letter",
       file: Coverletter,
       description: "Short version tailored for internships."
+    },
+    {
+      name: "Cybersecurity Resume",
+      file: CybersecurityResume,
+      description: "Focused on Cybersecurity skills and projects."
     }
   ];
 
