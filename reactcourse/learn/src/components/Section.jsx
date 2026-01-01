@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/Section.scss";
-import me from "./assets/me.jpg";
+import me from "./assets/mee.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Section = () => {
