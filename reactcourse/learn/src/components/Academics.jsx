@@ -7,8 +7,14 @@ import sitlogo from "./assets/sitlogo.jpg";
 
 const Academics = () => {
   return (
+    
     <div className="sections">
       <div className="sections_container academics_grid">
+        <div>
+      <h1>
+        Education
+      </h1>
+    </div>
 
         {/* HIGH SCHOOL */}
         <div className="academic_card">
@@ -37,7 +43,7 @@ const Academics = () => {
               rel="noopener noreferrer"
               className="website"
             >
-              Visit Website
+                Visit Website
             </a>
 
             <div className="tags">
