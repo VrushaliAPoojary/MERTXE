@@ -1,32 +1,23 @@
-/* ================= CONTACT SECTION ================= */
-
 .contact {
   width: 100%;
   min-height: 100vh;
-
   background: radial-gradient(circle at top right, #1d1b33, #05030a);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   position: relative;
   color: #f9fafb;
-
-  /* Increased top padding to prevent header overlap */
   padding: 6.5rem 1.5rem 4rem;
   box-sizing: border-box;
 }
 
 /* ================= LINKS ================= */
-
 a {
   text-decoration: none;
   color: inherit;
 }
 
 /* ================= FORM WRAPPER ================= */
-
 .inputs {
   width: 100%;
   max-width: 400px;
@@ -37,7 +28,6 @@ a {
   backdrop-filter: blur(16px);
 
   border-radius: 20px;
-
   border: 1px solid rgba(148, 163, 184, 0.25);
 
   box-shadow:
@@ -53,14 +43,11 @@ a {
 }
 
 /* ================= HEADING ================= */
-
 .inputs h1 {
   font-size: 2rem;
   font-weight: 800;
-
   margin-bottom: 2rem;
   color: #f9ddeb;
-
   text-align: center;
   letter-spacing: 0.04em;
   position: relative;
@@ -70,33 +57,27 @@ a {
   content: "";
   width: 70px;
   height: 3px;
-
   background: linear-gradient(
     90deg,
     rgb(244, 114, 182),
     rgb(129, 140, 248),
     rgb(56, 189, 248)
   );
-
   display: block;
   margin: 0.6rem auto 0;
   border-radius: 999px;
 }
 
 /* ================= INPUT FIELDS ================= */
-
 input {
   width: 100%;
   padding: 14px 16px;
   margin-bottom: 1.05rem;
-
   outline: none;
   border: 1px solid rgba(148, 163, 184, 0.25);
   border-radius: 10px;
-
   background: rgba(15, 23, 42, 0.55);
   color: #ffffff;
-
   font-size: 0.9rem;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -116,23 +97,18 @@ input:focus {
 }
 
 /* ================= SUBMIT BUTTON ================= */
-
 button {
   margin-top: 1.4rem;
   padding: 11px 46px;
-
   background: transparent;
   border: 2px solid rgb(244, 114, 182);
   color: rgb(244, 114, 182);
-
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-
   border-radius: 999px;
   cursor: pointer;
-
   transition:
     background 0.3s ease,
     color 0.3s ease,
@@ -141,15 +117,18 @@ button {
 }
 
 button:hover {
-  background: rgb(218, 14, 92);
+  background: linear-gradient(
+    120deg,
+    rgb(244, 114, 182),
+    rgb(129, 140, 248),
+    rgb(56, 189, 248)
+  );
   color: #ffffff;
-
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(244, 114, 182, 0.45);
+  box-shadow: 0 14px 30px rgba(218, 14, 92, 0.4);
 }
 
 /* ================= CONTACT ICONS ================= */
-
 .contact-icons {
   display: flex;
   gap: 2.1rem;
@@ -160,18 +139,63 @@ button:hover {
 .contact-icons .icon {
   font-size: 2.1rem;
   cursor: pointer;
-  color: #e5e7eb;
-
+  color: #8f5f75;
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .contact-icons .icon:hover {
-  color: rgb(218, 14, 92);
+  color: rgb(244, 114, 182);
   transform: translateY(-4px) scale(1.08);
 }
 
-/* ================= MOBILE (SAFE ONLY) ================= */
+/* ================= CONTACT OPTIONS MODAL ================= */
+.contact-options {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  text-align: center;
+}
 
+.contact-options p {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #f3c4d3;
+}
+
+.contact-options button {
+  width: 100%;
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.contact-options .whatsapp-btn {
+  background: #25d366;
+  color: #fff;
+}
+
+.contact-options .whatsapp-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.contact-options .email-btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.contact-options .email-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* ================= MOBILE (SAFE ONLY) ================= */
 @media (max-width: 550px) {
   .contact {
     padding: 5.2rem 1rem 3.5rem;
@@ -197,7 +221,6 @@ button:hover {
 }
 
 /* ================= SMALL HEIGHT DEVICES ================= */
-
 @media (max-height: 700px) {
   .contact {
     padding-top: 4.5rem;
