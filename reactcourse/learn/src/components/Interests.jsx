@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/Interests.scss";
-import aiIcon from "./assets/ai.png"; // Add relevant icons/images
+import aiIcon from "./assets/project6.png"; // Add relevant icons/images
 
 const Interests = () => {
   return (
