@@ -4,13 +4,20 @@ import { FaXTwitter } from "react-icons/fa6";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-const WHATSAPP_NUMBER = "919999999999"; // replace with your number
+const WHATSAPP_NUMBER = "918792264759"; // replace with your number
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [showOptions, setShowOptions] = useState(false);
+
+  const resetForm = () => {
+  setName("");
+  setEmail("");
+  setMessage("");
+};
+
 
   const handlePush = () => {
     if (!name || !email || !message) {
@@ -21,31 +28,39 @@ const Contact = () => {
   };
 
   const formattedMessage = `
-New Contact Message 🚀
+Hii Vrushali!!
 
-Name: ${name}
+I am  ${name}
 Email: ${email}
 
 Message:
 ${message}
   `.trim();
 
-  const handleWhatsApp = () => {
-    window.open(
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-        formattedMessage
-      )}`,
-      "_blank"
-    );
-    setShowOptions(false);
-  };
+const handleWhatsApp = () => {
+  window.open(
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      formattedMessage
+    )}`,
+    "_blank"
+  );
 
-  const handleEmail = () => {
-    window.location.href = `mailto:yourmail@example.com?subject=${encodeURIComponent(
-      "New Contact Message"
-    )}&body=${encodeURIComponent(formattedMessage)}`;
-    setShowOptions(false);
-  };
+  resetForm();
+  setShowOptions(false);
+};
+
+ const handleEmail = () => {
+  const subject = encodeURIComponent("New Contact Message");
+  const body = encodeURIComponent(formattedMessage);
+
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=vrushaliash04@gmail.com&su=${subject}&body=${body}`;
+
+  window.open(gmailUrl, "_blank");
+
+  resetForm();
+  setShowOptions(false);
+};
+
 
   return (
     <section className="contact">
