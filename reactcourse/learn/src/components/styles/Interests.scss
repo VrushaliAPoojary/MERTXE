@@ -1,9 +1,14 @@
+/* ================= INTERESTS SECTION ================= */
+
 .interests {
   width: 100%;
   padding: 100px 0;
-  background: linear-gradient(135deg, #0e0e19, #111827, #0a0a14);
-  color: #e5e7eb;
+  background: radial-gradient(circle at top right, #1d1b33, #05030a);
+  color: #f9fafb;
+  font-family: "Poppins", sans-serif;
 }
+
+/* ================= CONTAINER ================= */
 
 .interests_container {
   max-width: 1200px;
@@ -11,12 +16,38 @@
   padding: 0 20px;
 }
 
+/* ================= TITLE + UNDERLINE ================= */
+
 .interests_title {
-  font-size: 2.6rem;
+  font-size: 2rem; /* fixed to match Projects scale */
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 35px;
   font-weight: 700;
+  position: relative;
+  color: #f9ddeb;
 }
+
+.interests_title::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgb(244, 114, 182),
+    rgb(129, 140, 248),
+    rgb(56, 189, 248)
+  );
+  display: block;
+  margin: 0.8rem auto 0;
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.interests_title:hover::after {
+  width: 90px;
+}
+
+/* ================= GRID ================= */
 
 .interests_grid {
   display: grid;
@@ -24,29 +55,51 @@
   gap: 30px;
 }
 
+/* ================= CARD ================= */
+
 .interest_card {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(15, 23, 42, 0.65);
   border-radius: 18px;
   padding: 35px 25px;
   text-align: center;
+  margin-top: 0rem;
+
   cursor: pointer;
   position: relative;
-  transition: all 0.4s ease;
   overflow: hidden;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  backdrop-filter: blur(16px);
+
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+  
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(148, 163, 184, 0.12);
 }
 
+/* gradient glow border */
 .interest_card::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 18px;
   padding: 1px;
-  background: linear-gradient(120deg, #6366f1, #22d3ee);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  background: linear-gradient(
+    120deg,
+    rgb(244, 114, 182),
+    rgb(129, 140, 248),
+    rgb(56, 189, 248)
+  );
+  mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 260ms ease;
 }
 
 .interest_card:hover::before {
@@ -55,13 +108,18 @@
 
 .interest_card:hover {
   transform: translateY(-10px) scale(1.03);
-  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(244, 114, 182, 0.6);
+  box-shadow:
+    0 28px 55px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(244, 114, 182, 0.45);
 }
 
+/* ================= ICON ================= */
+
 .interest_icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 20px;
+  width: 64px; /* size aligned with cards */
+  height: 64px;
+  margin: 0 auto 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,22 +128,36 @@
 .interest_icon img {
   width: 100%;
   height: auto;
+  filter: brightness(1.05);
 }
 
+/* ================= TEXT ================= */
+
 .interest_card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.05rem; /* matched to project card titles */
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #f9fafb;
 }
 
 .interest_card p {
-  font-size: 0.95rem;
+  font-size: 0.88rem; /* matched to project description */
   line-height: 1.5;
-  color: #cbd5f5;
+  color: #d1d5db;
 }
 
-/* Responsive */
+/* ================= MOBILE ================= */
+
 @media (max-width: 600px) {
   .interests_title {
-    font-size: 2.1rem;
+    font-size: 1.75rem;
+  }
+
+  .interest_card h3 {
+    font-size: 1rem;
+  }
+
+  .interest_card p {
+    font-size: 0.85rem;
   }
 }

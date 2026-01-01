@@ -4,52 +4,19 @@
   width: 100%;
   min-height: 100vh;
 
-  background: linear-gradient(
-    135deg,
-    #0e0e19 0%,
-    #111827 50%,
-    #0a0a14 100%
-  );
+  background: radial-gradient(circle at top right, #1d1b33, #05030a);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   position: relative;
-  color: #e0d0d8;
+  color: #f9fafb;
 
   /* Increased top padding to prevent header overlap */
   padding: 6.5rem 1.5rem 4rem;
   box-sizing: border-box;
 }
-
-/* ================= BACK ARROW ================= */
-
-// .arrow {
-//   position: absolute;
-//   top: 2rem;
-//   left: 2rem;
-
-//   font-size: 2.1rem;
-//   color: #f9ddeb;
-
-//   cursor: pointer;
-//   background: transparent;
-//   border: none;
-
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   z-index: 10; /* ensures arrow stays above card */
-
-//   transition: color 0.25s ease, transform 0.25s ease;
-// }
-
-// .arrow:hover {
-//   color: rgb(218, 14, 92);
-//   transform: translateX(-4px);
-// }
 
 /* ================= LINKS ================= */
 
@@ -62,32 +29,33 @@ a {
 
 .inputs {
   width: 100%;
-  max-width: 400px; /* slightly reduced to fit viewport better */
+  max-width: 400px;
   padding: 2.3rem 2.1rem;
   margin: auto;
 
-  background: rgba(18, 18, 30, 0.92);
-  backdrop-filter: blur(14px);
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
 
   border-radius: 20px;
 
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
   box-shadow:
     0 22px 45px rgba(0, 0, 0, 0.55),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    0 0 0 1px rgba(148, 163, 184, 0.12);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  /* Keeps card inside viewport on small screens */
   max-height: calc(100vh - 9rem);
 }
 
 /* ================= HEADING ================= */
 
 .inputs h1 {
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 800;
 
   margin-bottom: 2rem;
@@ -100,14 +68,19 @@ a {
 
 .inputs h1::after {
   content: "";
-  width: 50px;
-  height: 4px;
+  width: 70px;
+  height: 3px;
 
-  background: rgb(218, 14, 92);
+  background: linear-gradient(
+    90deg,
+    rgb(244, 114, 182),
+    rgb(129, 140, 248),
+    rgb(56, 189, 248)
+  );
 
   display: block;
   margin: 0.6rem auto 0;
-  border-radius: 4px;
+  border-radius: 999px;
 }
 
 /* ================= INPUT FIELDS ================= */
@@ -118,13 +91,13 @@ input {
   margin-bottom: 1.05rem;
 
   outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(148, 163, 184, 0.25);
   border-radius: 10px;
 
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.55);
   color: #ffffff;
 
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -133,8 +106,8 @@ input::placeholder {
 }
 
 input:focus {
-  border-color: rgb(218, 14, 92);
-  box-shadow: 0 0 0 3px rgba(218, 14, 92, 0.25);
+  border-color: rgb(244, 114, 182);
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.25);
 }
 
 /* MESSAGE INPUT SPACING */
@@ -149,10 +122,10 @@ button {
   padding: 11px 46px;
 
   background: transparent;
-  border: 2px solid rgb(218, 14, 92);
-  color: rgb(218, 14, 92);
+  border: 2px solid rgb(244, 114, 182);
+  color: rgb(244, 114, 182);
 
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
@@ -168,11 +141,11 @@ button {
 }
 
 button:hover {
-  background: rgb(218, 14, 92);
+  background: rgb(215, 20, 82);
   color: #ffffff;
 
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(218, 14, 92, 0.4);
+  box-shadow: 0 14px 30px rgba(244, 114, 182, 0.45);
 }
 
 /* ================= CONTACT ICONS ================= */
@@ -185,14 +158,15 @@ button:hover {
 }
 
 .contact-icons .icon {
-  font-size: 2.25rem;
+  font-size: 2.1rem;
   cursor: pointer;
+  color: #e5e7eb;
 
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .contact-icons .icon:hover {
-  color: rgb(218, 14, 92);
+  color: rgb(220, 21, 107);
   transform: translateY(-4px) scale(1.08);
 }
 
@@ -210,7 +184,7 @@ button:hover {
   }
 
   .inputs h1 {
-    font-size: 1.95rem;
+    font-size: 1.85rem;
   }
 
   .contact-icons {
@@ -218,7 +192,7 @@ button:hover {
   }
 
   .contact-icons .icon {
-    font-size: 2.05rem;
+    font-size: 1.95rem;
   }
 }
 

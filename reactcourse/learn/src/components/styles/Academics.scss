@@ -5,13 +5,8 @@
   margin-top: 12rem;
   display: flex;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    #0f0f1a 0%,
-    #111827 50%,
-    #0b0b14 100%
-  );
-  color: #e5e7eb;
+  background: radial-gradient(circle at top right, #1d1b33, #05030a);
+  color: #f9fafb;
 }
 
 .sections_container {
@@ -19,7 +14,38 @@
   width: 100%;
 }
 
-/* STRICT VERTICAL LIST */
+/* ================= HEADING UNDERLINE ================= */
+
+.sections_container h1 {
+  text-align: center;
+  font-size: 2rem; /* aligned with other section titles */
+  font-weight: 700;
+  position: relative;
+  color: #f9ddeb;
+}
+
+.sections_container h1::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgb(244, 114, 182),
+    rgb(129, 140, 248),
+    rgb(56, 189, 248)
+  );
+  display: block;
+  margin: 0.6rem auto 0;
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.sections_container h1:hover::after {
+  width: 90px;
+}
+
+/* ================= ACADEMICS LIST ================= */
+
 .academics_grid {
   display: flex;
   margin-top: 6rem;
@@ -27,23 +53,32 @@
   gap: 1.1rem;
 }
 
-/* LIST ROW */
+/* CARD */
 .academic_card {
   width: 100%;
   display: flex;
   align-items: center;
   gap: 1.2rem;
   padding: 0.9rem 1.4rem;
-  background: rgba(15, 15, 26, 0.55);
+
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+
   border-radius: 10px;
-  border: 1px solid rgba(218, 14, 92, 0.18);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-  transition: all 0.25s ease;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(148, 163, 184, 0.12);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .academic_card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55);
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(244, 114, 182, 0.45);
 }
 
 /* LEFT */
@@ -58,7 +93,7 @@
 }
 
 .card_header h2 {
-  font-size: 0.85rem;
+  font-size: 0.8rem; /* refined */
   font-weight: 700;
   color: #f9ddeb;
 }
@@ -78,7 +113,7 @@
 
 .location {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #9ca3af;
   margin-bottom: 0.2rem;
   text-decoration: none;
@@ -91,8 +126,8 @@
 
 .website {
   display: inline-block;
-  font-size: 0.8rem;
-  color: rgb(218, 14, 92);
+  font-size: 0.78rem;
+  color: rgb(244, 114, 182);
   font-weight: 600;
   margin-right: 0.5rem;
   text-decoration: none;
@@ -104,27 +139,36 @@
 
 .tags {
   display: inline-flex;
-  flex-wrap: wrap; /* prevents overflow on small screens */
+  flex-wrap: wrap;
   gap: 0.35rem;
   margin-top: 0.2rem;
 }
 
 .tags span {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   padding: 0.2rem 0.55rem;
-  background: rgba(218, 14, 92, 0.12);
-  border: 1px solid rgba(218, 14, 92, 0.3);
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(30, 64, 175, 0.55),
+    rgba(15, 23, 42, 0.95)
+  );
+
+  border: 1px solid rgba(148, 163, 184, 0.5);
   border-radius: 999px;
-  color: #f9ddeb;
+  color: #e5e7eb;
+
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.6);
 }
 
 .score {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   margin-top: 0.2rem;
   color: #e5e7eb;
 }
 
-/* MOBILE (existing logic kept, only refined spacing) */
+/* ================= MOBILE ================= */
+
 @media (max-width: 600px) {
   .sections {
     padding: 2.2rem 1rem;
@@ -146,4 +190,3 @@
     width: 42px;
   }
 }
-
