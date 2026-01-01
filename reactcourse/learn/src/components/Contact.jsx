@@ -4,7 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-const WHATSAPP_NUMBER = "919999999999"; // ← replace with your number
+const WHATSAPP_NUMBER = "919999999999"; // replace with your number
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -20,7 +20,7 @@ const Contact = () => {
     setShowOptions(true);
   };
 
-  const whatsappMessage = `
+  const formattedMessage = `
 New Contact Message 🚀
 
 Name: ${name}
@@ -31,74 +31,86 @@ ${message}
   `.trim();
 
   const handleWhatsApp = () => {
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-      whatsappMessage
-    )}`;
-    window.open(url, "_blank");
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+        formattedMessage
+      )}`,
+      "_blank"
+    );
     setShowOptions(false);
   };
 
   const handleEmail = () => {
-    const subject = encodeURIComponent("New Contact Message");
-    const body = encodeURIComponent(whatsappMessage);
-    window.location.href = `mailto:yourmail@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:yourmail@example.com?subject=${encodeURIComponent(
+      "New Contact Message"
+    )}&body=${encodeURIComponent(formattedMessage)}`;
     setShowOptions(false);
   };
 
   return (
-    <div className="contact">
-      <div className="inputs">
-        <h1>Contact Me</h1>
+    <section className="contact">
+      <div className="contact__card">
+        <h1 className="contact__title">Contact Me</h1>
 
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <div className="contact__form">
+          <input
+            className="contact__input"
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <input
+            className="contact__input"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <input
-          type="text"
-          placeholder="Message"
-          className="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
+          <input
+            className="contact__input contact__input--message"
+            type="text"
+            placeholder="Message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
 
-        <button onClick={handlePush}>Push</button>
+          <button className="contact__submit" onClick={handlePush}>
+            Push
+          </button>
+        </div>
 
-        {/* Contact Options Modal */}
         {showOptions && (
-          <div className="contact-options">
+          <div className="contact__options">
             <p>Contact me via</p>
-            <button className="whatsapp-btn" onClick={handleWhatsApp}>
+            <button
+              className="contact__option-btn contact__option-btn--whatsapp"
+              onClick={handleWhatsApp}
+            >
               WhatsApp 📲
             </button>
-            <button className="email-btn" onClick={handleEmail}>
+            <button
+              className="contact__option-btn contact__option-btn--email"
+              onClick={handleEmail}
+            >
               Email ✉️
             </button>
           </div>
         )}
 
-        {/* Social Icons */}
-        <div className="contact-icons">
+        <div className="contact__icons">
           <a href="https://x.com/VrushaliAP04" target="_blank" rel="noreferrer">
-            <FaXTwitter className="icon" />
+            <FaXTwitter className="contact__icon" />
           </a>
 
           <a
-            href="http://linkedin.com/in/vrushali-a-poojary-73b9a129a"
+            href="https://linkedin.com/in/vrushali-a-poojary-73b9a129a"
             target="_blank"
             rel="noreferrer"
           >
-            <LinkedInIcon className="icon" />
+            <LinkedInIcon className="contact__icon" />
           </a>
 
           <a
@@ -106,11 +118,11 @@ ${message}
             target="_blank"
             rel="noreferrer"
           >
-            <GitHubIcon className="icon" />
+            <GitHubIcon className="contact__icon" />
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

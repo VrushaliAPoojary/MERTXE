@@ -1,226 +1,250 @@
+/* ================= CONTACT SECTION ================= */
+
 .contact {
   width: 100%;
   min-height: 100vh;
-  background: radial-gradient(circle at top right, #1d1b33, #05030a);
+  padding: 6.5rem 1.5rem 4rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+
+  background: radial-gradient(circle at top right, #1d1b33, #05030a);
   color: #f9fafb;
-  padding: 6.5rem 1.5rem 4rem;
   box-sizing: border-box;
 }
 
-/* ================= LINKS ================= */
-a {
+/* ONLY links inside contact */
+.contact a {
   text-decoration: none;
   color: inherit;
 }
 
-/* ================= FORM WRAPPER ================= */
-.inputs {
+/* ================= CARD ================= */
+
+.contact__card {
   width: 100%;
-  max-width: 400px;
-  padding: 2.3rem 2.1rem;
-  margin: auto;
+  max-width: 420px;
+  padding: 2.4rem 2.2rem;
 
   background: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(16px);
 
-  border-radius: 20px;
+  border-radius: 22px;
   border: 1px solid rgba(148, 163, 184, 0.25);
 
   box-shadow:
-    0 22px 45px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(148, 163, 184, 0.12);
+    0 25px 50px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(148, 163, 184, 0.12);
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  max-height: calc(100vh - 9rem);
 }
 
-/* ================= HEADING ================= */
-.inputs h1 {
+/* ================= TITLE ================= */
+
+.contact__title {
   font-size: 2rem;
   font-weight: 800;
-  margin-bottom: 2rem;
+  letter-spacing: 0.04em;
   color: #f9ddeb;
   text-align: center;
-  letter-spacing: 0.04em;
   position: relative;
+  margin-bottom: 2rem;
 }
 
-.inputs h1::after {
+.contact__title::after {
   content: "";
   width: 70px;
   height: 3px;
+  display: block;
+  margin: 0.6rem auto 0;
+  border-radius: 999px;
+
   background: linear-gradient(
     90deg,
     rgb(244, 114, 182),
     rgb(129, 140, 248),
     rgb(56, 189, 248)
   );
-  display: block;
-  margin: 0.6rem auto 0;
-  border-radius: 999px;
 }
 
-/* ================= INPUT FIELDS ================= */
-input {
+/* ================= FORM ================= */
+
+.contact__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* INPUTS */
+.contact__input {
   width: 100%;
   padding: 14px 16px;
   margin-bottom: 1.05rem;
-  outline: none;
+
+  background: rgba(15, 23, 42, 0.55);
   border: 1px solid rgba(148, 163, 184, 0.25);
   border-radius: 10px;
-  background: rgba(15, 23, 42, 0.55);
+
   color: #ffffff;
   font-size: 0.9rem;
+
+  outline: none;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-input::placeholder {
+.contact__input::placeholder {
   color: #9ca3af;
 }
 
-input:focus {
+.contact__input:focus {
   border-color: rgb(244, 114, 182);
   box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.25);
 }
 
-/* MESSAGE INPUT SPACING */
-.message {
+/* MESSAGE */
+.contact__input--message {
   padding-bottom: 6rem;
 }
 
-/* ================= SUBMIT BUTTON ================= */
-button {
+/* ================= SUBMIT ================= */
+
+.contact__submit {
   margin-top: 1.4rem;
   padding: 11px 46px;
+
   background: transparent;
-  border: 2px solid rgb(244, 114, 182);
-  color: rgb(244, 114, 182);
-  font-size: 0.85rem;
+  border: 2px solid rgb(227, 104, 135);
+  color: rgb(227, 104, 135);
+
+  font-size: 0.8rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 1.2px;
+  text-transform: uppercase;
+
   border-radius: 999px;
   cursor: pointer;
+
   transition:
     background 0.3s ease,
     color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
 }
 
-button:hover {
-  background: linear-gradient(
-    120deg,
-    rgb(244, 114, 182),
-    rgb(129, 140, 248),
-    rgb(56, 189, 248)
-  );
+.contact__submit:hover {
+  background: rgb(218, 14, 92);
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 14px 30px rgba(218, 14, 92, 0.4);
 }
 
-/* ================= CONTACT ICONS ================= */
-.contact-icons {
-  display: flex;
-  gap: 2.1rem;
-  margin-top: 2.3rem;
-  justify-content: center;
-}
+/* ================= OPTIONS ================= */
 
-.contact-icons .icon {
-  font-size: 2.1rem;
-  cursor: pointer;
-  color: #8f5f75;
-  transition: color 0.25s ease, transform 0.25s ease;
-}
+.contact__options {
+  width: 100%;
+  margin-top: 1.6rem;
 
-.contact-icons .icon:hover {
-  color: rgb(244, 114, 182);
-  transform: translateY(-4px) scale(1.08);
-}
-
-/* ================= CONTACT OPTIONS MODAL ================= */
-.contact-options {
-  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  width: 100%;
   text-align: center;
 }
 
-.contact-options p {
+.contact__options p {
   font-weight: 600;
-  margin-bottom: 0.6rem;
   color: #f3c4d3;
 }
 
-.contact-options button {
-  width: 100%;
+.contact__option-btn {
   padding: 12px 0;
-  font-weight: 600;
-  font-size: 0.9rem;
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: all 0.25s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.contact-options .whatsapp-btn {
+.contact__option-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.contact__option-btn--whatsapp {
   background: #25d366;
-  color: #fff;
+  color: #ffffff;
 }
 
-.contact-options .whatsapp-btn:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-.contact-options .email-btn {
+.contact__option-btn--email {
   background: #2563eb;
-  color: #fff;
+  color: #ffffff;
 }
 
-.contact-options .email-btn:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
+/* ================= ICONS ================= */
+
+.contact__icons {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 2.1rem;
+  justify-content: center;
 }
 
-/* ================= MOBILE (SAFE ONLY) ================= */
+/* LOCK ICON SIZE — PREVENTS JUMP */
+.contact__icon {
+  font-size: 2.1rem;
+  width: 2.1rem;
+  height: 2.1rem;
+
+  color: #8f5f75;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* ABSOLUTE SAFETY FOR SVG ICONS */
+.contact__icons svg {
+  width: 2.1rem !important;
+  height: 2.1rem !important;
+}
+
+.contact__icon:hover {
+  color: rgb(218, 14, 92);
+  transform: translateY(-4px) scale(1.08);
+}
+
+/* ================= MOBILE ================= */
+
 @media (max-width: 550px) {
   .contact {
     padding: 5.2rem 1rem 3.5rem;
   }
 
-  .inputs {
-    max-width: 92%;
+  .contact__card {
     padding: 2rem 1.6rem;
-    max-height: unset;
   }
 
-  .inputs h1 {
+  .contact__title {
     font-size: 1.85rem;
   }
 
-  .contact-icons {
-    gap: 1.8rem;
-  }
-
-  .contact-icons .icon {
+  .contact__icon {
     font-size: 1.95rem;
+    width: 1.95rem;
+    height: 1.95rem;
   }
 }
 
-/* ================= SMALL HEIGHT DEVICES ================= */
+/* ================= SMALL HEIGHT ================= */
+
 @media (max-height: 700px) {
   .contact {
     padding-top: 4.5rem;

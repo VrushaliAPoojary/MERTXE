@@ -3,194 +3,179 @@
 .resumes {
   width: 100%;
   min-height: 100vh;
-
-  background: linear-gradient(
-    135deg,
-    #0e0e19 0%,
-    #111827 50%,
-    #0a0a14 100%
-  );
-
-  color: #f9ddeb;
+  padding: 8rem 1.25rem 3.5rem;
 
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 
-  padding: 7rem 2rem 4rem;
+  background: radial-gradient(circle at top right, #1d1b33, #05030a);
+  color: #f9fafb;
+  font-family: "Poppins", sans-serif;
 }
 
 /* ================= CONTAINER ================= */
 
 .resumes_container {
-  max-width: 960px;
-  width: 100%;
-
-  padding: 2.5rem;
+  width: 200%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-/* ================= SECTION HEADING ================= */
+/* ================= TITLE ================= */
 
 .resumes_container h2 {
-  font-size: 2.6rem;
-  font-weight: 800;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f9ddeb;
+  text-align: center;
   margin-bottom: 0.6rem;
+  position: relative;
+}
 
-  color: rgb(218, 14, 92);
-  letter-spacing: 0.04em;
+/* underline — EXACT Projects style */
+.resumes_container h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 70px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgb(244, 114, 182),
+    rgb(129, 140, 248),
+    rgb(56, 189, 248)
+  );
+  transform: translateX(-50%);
 }
 
 .resumes_container p {
   max-width: 620px;
-  margin-bottom: 3rem;
+  margin: 2.5rem auto 3rem;
 
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   line-height: 1.6;
-
-  opacity: 0.88;
+  text-align: center;
+  color: #d1d5db;
 }
+
+/* ================= GRID ================= */
 
 /* ================= RESUME GRID ================= */
 
 .resume_cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* ⬅ increased */
   gap: 2rem;
 }
+
 
 /* ================= CARD ================= */
 
 .resume_card {
-  background: rgba(18, 18, 30, 0.92);
-  backdrop-filter: blur(14px);
+  width: 100%;
+  max-width: 300px; 
 
-  border-radius: 16px;
-  padding: 2rem;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+
+  border-radius: 18px;
+  padding: 1.6rem;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.45),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    0 16px 32px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(148, 163, 184, 0.12);
 
   transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
 }
 
 .resume_card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+  border-color: rgba(244, 114, 182, 0.7);
   box-shadow:
-    0 25px 55px rgba(0, 0, 0, 0.6),
-    inset 0 0 0 1px rgba(218, 14, 92, 0.25);
+    0 28px 55px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(244, 114, 182, 0.45);
 }
 
 /* ================= CARD CONTENT ================= */
 
 .resume_card h3 {
-  margin-bottom: 0.6rem;
-
-  font-size: 1.35rem;
-  font-weight: 700;
-
-  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 0.4rem;
 }
 
 .resume_card p {
-  font-size: 1rem;
-  line-height: 1.6;
-
-  margin-bottom: 1.8rem;
-  opacity: 0.9;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #d1d5db;
+  margin-bottom: 1.2rem;
 }
 
-/* ================= CTA BUTTON ================= */
+/* ================= BUTTON ================= */
 
 .resume_link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 0.65rem 1.8rem;
+  padding: 0.45rem 1.25rem;
   border-radius: 999px;
 
-  border: 2px solid rgb(218, 14, 92);
-  color: rgb(218, 14, 92);
+  border: 2px solid rgb(244, 114, 182);
+  color: rgb(244, 114, 182);
 
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 
+  background: transparent;
   text-decoration: none;
 
   transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.2s ease;
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
 }
 
 .resume_link:hover {
-  background: rgb(218, 14, 92);
-  color: #ffffff;
-
+  background: rgb(188, 21, 79);
+  color: #f1f3fc;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(218, 14, 92, 0.4);
+  box-shadow: 0 14px 30px rgba(244, 114, 182, 0.4);
 }
 
 /* ================= RESPONSIVE ================= */
 
-/* TABLET */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .resumes {
     padding-top: 6rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .resumes_container {
-    padding: 2rem;
-  }
-
-  .resumes_container h2 {
-    font-size: 2.2rem;
-  }
-
-  .resumes_container p {
-    font-size: 1rem;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 480px) {
-  .resumes {
-    padding-top: 5.5rem;
-    padding-bottom: 3rem;
-  }
-
-  .resumes_container {
-    padding: 1.6rem;
   }
 
   .resume_cards {
-    gap: 1.6rem;
-  }
-
-  .resume_card {
-    padding: 1.6rem;
-  }
-
-  .resume_card h3 {
-    font-size: 1.25rem;
-  }
-
-  .resume_link {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
-/* SHORT HEIGHT DEVICES */
-@media (max-height: 700px) {
+@media (max-width: 600px) {
   .resumes {
     padding-top: 5rem;
+  }
+
+  .resumes_container h2 {
+    font-size: 1.6rem;
+  }
+
+  .resumes_container p {
+    font-size: 0.85rem;
   }
 }
