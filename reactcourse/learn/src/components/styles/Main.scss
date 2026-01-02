@@ -44,11 +44,20 @@
     line-height: 1.2;
   }
 
+  /* NAME DEFAULT */
   .color {
-    color: rgb(218, 14, 92);
+    color:rgb(218, 14, 92);
     font-weight: 800;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* NAME HOVER → BLUE */
+  .color:hover {
+    color: #1e88e5;
   }
 }
+
 
 /* ================= ICONS (FULLY FIXED) ================= */
 
