@@ -44,22 +44,19 @@
     line-height: 1.2;
   }
 
-  /* NAME DEFAULT */
   .color {
-    color:rgb(218, 14, 92);
+    color: rgb(218, 14, 92);
     font-weight: 800;
     transition: color 0.3s ease;
     cursor: pointer;
   }
 
-  /* NAME HOVER → BLUE */
   .color:hover {
     color: #1e88e5;
   }
 }
 
-
-/* ================= ICONS (FULLY FIXED) ================= */
+/* ================= ICONS ================= */
 
 .main .icons {
   display: flex;
@@ -67,17 +64,15 @@
   margin-top: 1.8rem;
 }
 
-/* 🔒 RESET LINK COLOR ONLY HERE */
 .main .icons a {
   color: inherit;
   text-decoration: none;
 }
 
-/* ICON STYLE */
 .main .icons .icon {
   font-size: 2.2rem;
   cursor: pointer;
-  color: #eeb8da; /* 👈 force correct color */
+  color: #eeb8da;
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
@@ -124,6 +119,15 @@
   box-shadow:
     0 0 40px rgba(218, 14, 92, 0.35),
     0 0 80px rgba(218, 14, 92, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* 👇 SMALL HOVER ACTION */
+.main_img img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 55px rgba(218, 14, 92, 0.45),
+    0 0 100px rgba(218, 14, 92, 0.25);
 }
 
 /* ================= RESPONSIVE ================= */
