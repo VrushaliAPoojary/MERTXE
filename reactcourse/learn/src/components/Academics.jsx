@@ -130,7 +130,7 @@ const Academics = () => {
 
             <div className="tags">
               <span>BE</span>
-              <span>AI / ML</span>
+              <span>Artificial Intelligence and Machine Learning</span>
             </div>
 
             <div className="score">
